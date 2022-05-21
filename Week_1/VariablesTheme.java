@@ -61,5 +61,37 @@ public class VariablesTheme {
         System.out.println(s + " " + sInc + " " + sDec);
         System.out.println(i + " " + iInc + " " + iDec);
         System.out.println(l + " " + lInt + " " + lDec);
-        }
+
+        System.out.println("\n");
+
+        float numOne = 1.3f;
+        float numTwo = 3.2f;
+        float changeNum;
+        
+        System.out.println("Перестановка с помощью переменной: \n" + 
+                           "numOne: " + numOne +", " + "numTwo: " +  numTwo);
+        changeNum = numOne;
+        numOne = numTwo;
+        System.out.println("numOne: " + numOne +", " + "numTwo: " +  changeNum);
+
+        numOne = 1.3f;
+        numTwo = 3.2f;
+
+        System.out.println("Перестановка с помощью арифметических операций: \n" + 
+                           "numOne: " + numOne +", " + "numTwo: " +  numTwo);
+        numOne = numOne + numTwo;
+        numTwo = numOne - numTwo;
+        numOne = numOne - numTwo;
+        System.out.println("numOne: " + numOne +", " + "numTwo: " +  numTwo);
+
+        // numOne = 1.3f;
+        // numTwo = 3.2f;
+
+        // System.out.println("Перестановка с помощью побитовых операций: \n" + 
+        //                    "numOne: " + numOne +", " + "numTwo: " +  numTwo);
+        // numOne = numOne ^ numTwo;
+        // numTwo = numOne ^ numTwo;
+        // numOne = numOne ^ numTwo;
+        // System.out.println("numOne: " + numOne +", " + "numTwo: " +  numTwo);
+    }
 }
