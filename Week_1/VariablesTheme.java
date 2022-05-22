@@ -10,7 +10,7 @@ public class VariablesTheme {
         char namePC = 'a';
         boolean windowsOS = true;
 
-        System.out.println("bitness: " + bitness + "\n" + "cointMonitor: " + cointMonitor + "\n" +
+        System.out.print("bitness: " + bitness + "\n" + "cointMonitor: " + cointMonitor + "\n" +
                            "codeProduct: " + codeProduct + "\n" + "buildOS: " + buildOS + "\n" +
                            "wightPC: " + wightPC + "\n" + "weightMouse: " + weightMouse + "\n" +
                            "namePC: " + namePC + "\n" + "windowsOS: " + windowsOS);
@@ -24,7 +24,7 @@ public class VariablesTheme {
         int discountSum = (itemCost_1 / 100 * discoumt) + (itemCost_2 / 100 * discoumt);
         int totalSum = (itemCost_1 - (itemCost_1 / 100 * discoumt) + 
                        (itemCost_2 - (itemCost_2 / 100 * discoumt)));
-        System.out.println("Сумма скидки: " + discountSum + "\n" +
+        System.out.print("Сумма скидки: " + discountSum + "\n" +
                            "Итоговая стоимость товаров со скидкой: " + totalSum);
 
         System.out.println("\n");
@@ -34,7 +34,7 @@ public class VariablesTheme {
         char v = 'v';
         char vUpp = 'V';
 
-        System.out.println(
+        System.out.print(
             "   " + jUpp + "   " + a + "  " + v + "    " + v + "  " + a + "\n" + 
             "   " + jUpp + "  " + a + " " + a + "  "+ v + "  " + v + "  " + a + " " + a + "\n" + 
             jUpp +"  " + jUpp + " " + a + a + a + a + a + "  "+ vUpp + vUpp + "  " + a + a + a + a + a + "\n" + 
@@ -60,7 +60,7 @@ public class VariablesTheme {
         System.out.println(b + " " + bInc + " " + bDec);
         System.out.println(s + " " + sInc + " " + sDec);
         System.out.println(i + " " + iInc + " " + iDec);
-        System.out.println(l + " " + lInt + " " + lDec);
+        System.out.print(l + " " + lInt + " " + lDec);
 
         System.out.println("\n");
 
@@ -82,7 +82,7 @@ public class VariablesTheme {
         numOne = numOne + numTwo;
         numTwo = numOne - numTwo;
         numOne = numOne - numTwo;
-        System.out.println("numOne: " + numOne +", " + "numTwo: " +  numTwo);
+        System.out.print("numOne: " + numOne +", " + "numTwo: " +  numTwo);
 
         // numOne = 1.3f;
         // numTwo = 3.2f;
@@ -93,5 +93,36 @@ public class VariablesTheme {
         // numTwo = numOne ^ numTwo;
         // numOne = numOne ^ numTwo;
         // System.out.println("numOne: " + numOne +", " + "numTwo: " +  numTwo);
+
+        System.out.println("\n");
+
+        int aa = 35;
+        int bb = 38;
+        int cc = 64;
+        int dd = 94;
+        int ee = 95;
+
+        System.out.println("Код символа: " + aa + ", Символ: " + (char)aa);
+        System.out.println("Код символа: " + bb + ", Символ: " + (char)bb);
+        System.out.println("Код символа: " + cc + ", Символ: " + (char)cc);
+        System.out.println("Код символа: " + dd + ", Символ: " + (char)dd);
+        System.out.print("Код символа: " + ee + ", Символ: " + (char)ee);
+
+        System.out.println("\n");
+
+        int num = 345;
+        int num_1 = num / 100;
+        int num_2 = num % 100 / 10; 
+        int num_3 = num % 10;
+
+        System.out.println(num_1 + " " + num_2 + " "+ num_3);
+        System.out.println("Сумма чисел: " + (num_1 + num_2 + num_3));
+        System.out.println("Сумма чисел: " + num_1 * num_2 * num_3);
+
+        System.out.println("\n");
+
+        char rightSlash = '/';
+
+
     }
 }
