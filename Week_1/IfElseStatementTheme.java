@@ -27,8 +27,10 @@ public class IfElseStatementTheme {
         } else if (firstLatterName == 'I') {
             System.out.println("Имя начинается на \"I\"");
         } else {
-            System.out.println("Имя начинается не на \"М\" и не на \"I\"\n");
+            System.out.println("Имя начинается не на \"М\" и не на \"I\"");
         }
+
+        System.out.println("");
 
         int numOne = 4;
         int numTwo = 6;
@@ -38,5 +40,29 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Число max: " + numTwo + "; " + "Число min: " + numOne);
         }
+
+        System.out.println("");
+
+        int num = -2;
+
+        if (num == 0) {
+            System.out.println("Число - 0");
+        } else {
+            if (num % 2 == 0) {
+                System.out.println("Число - четное");
+            } else {
+                System.out.println("Число - нечетное");
+            }
+
+            if (num < 0) {
+                System.out.println("Число - отрицательное");
+            } else {
+                System.out.println("Число - положительное");
+            }
+        }
+
+        System.out.println("");
+
+        
     }
 }
