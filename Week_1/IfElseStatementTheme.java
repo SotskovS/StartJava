@@ -106,5 +106,26 @@ public class IfElseStatementTheme {
                 " одинаковые цифры \"" + numOne_Z + "\" стоят в 3 разряде");            
         } 
 
+        System.out.println("");
+
+        char simbol = '\u0057';
+
+        System.out.println(simbol + ": ");
+
+        if (Character.isUpperCase(simbol)) {
+            System.out.println("Символ - большая буква");
+        } else {    
+            System.out.println("Символ - маленькая буква");
+        }
+
+        if (Character.isDigit(simbol)) {
+            System.out.println("Символ - число");
+        } else {
+            System.out.println("Символ - не число");
+        }
+
+        if (!Character.isLetter(simbol) && !Character.isDigit(simbol)) {
+            System.out.println("Символ - не буква и не число");
+        } 
     }
 }
