@@ -144,11 +144,47 @@ public class IfElseStatementTheme {
         } 
 
         total = sum + accrued;
-
             
         System.out.println("Сумма вклада: " + sum + ", " + 
                            "Начисленный процент: " + accrued + ", " +
                            "Итоговая сумма: " +  total);
+
+        System.out.println("");
+
+        int history = 59;
+        int programming = 91;
+        int resultHistory = 0;
+        int resultProgramming = 0;
+        float averageResult = 0;
+        float averagePercent = 0;
+
+        if (history > 91) {
+            resultHistory = 5;
+        } else if (history > 73) {
+            resultHistory = 4;             
+        } else if (history > 60) {
+            resultHistory = 3;             
+        } else if (history <= 60) {
+            resultHistory = 2;             
+        }
+
+        if (programming > 91) {
+            resultProgramming = 5;
+        } else if (programming > 73) {
+            resultProgramming = 4;             
+        } else if (programming > 60) {
+            resultProgramming = 3;             
+        } else if (programming <= 60) {
+            resultProgramming = 2;             
+        }
+
+        averageResult = (resultHistory + resultProgramming) / 2;
+
+        averagePercent = (history + programming) / 2;
+
+        System.out.println(resultHistory + " - История, " + resultProgramming + 
+                           " - Программирование \n" + "Средний балл: " + averageResult + 
+                           "\nСредний процент по предметам: " + averagePercent);
     }
 }
 
