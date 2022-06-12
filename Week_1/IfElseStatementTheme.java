@@ -185,6 +185,50 @@ public class IfElseStatementTheme {
         System.out.println(resultHistory + " - История, " + resultProgramming + 
                            " - Программирование \n" + "Средний балл: " + averageResult + 
                            "\nСредний процент по предметам: " + averagePercent);
+
+        System.out.println("");
+
+        int rent = 5000;
+        int averageSales = 13000;
+        int productionCost = 9000;
+        int annualProfit = 0;
+
+        annualProfit = (averageSales - productionCost - rent) * 12;
+
+        if (annualProfit > 0) {
+            System.out.println("Годовая прибыль: +" + annualProfit +" руб.");
+        } else {
+            System.out.println("Годовая прибыль: " + annualProfit + " руб.");
+        }
+
+        System.out.println("");
+
+        sum = 567;
+
+        int banknote100 = 0;
+        int banknote10 = 0;
+        int banknote1 = 0;
+        int totalSum = 0;
+
+        banknote100 = sum / 100;
+        banknote10 = sum % 100 / 10;
+        banknote1 = sum % 10;
+
+        totalSum = banknote100 * 100 + banknote10 * 10 + banknote1; 
+
+        if (banknote10 > 5) {
+            banknote1 = (banknote10 - 5) * 10 + banknote1;
+            banknote10 = 5;
+            System.out.println("Номиналы банкнот: 100USD, 10USD, 1USD \n" + 
+                           "Количество: " + "100USD - " + banknote100 + 
+                           ", 10USD - " + banknote10 + ", 1USD - " + banknote1 +
+                           "\nИсходная сумма: " + totalSum + "USD");
+        } else {
+            System.out.println("Номиналы банкнот: 100USD, 10USD, 1USD \n" + 
+                           "Количество: " + "100USD - " + banknote100 + 
+                           ", 10USD - " + banknote10 + ", 1USD - " + banknote1 +
+                           "\nИсходная сумма: " + totalSum + "USD");
+        }
     }
 }
 
