@@ -127,5 +127,29 @@ public class IfElseStatementTheme {
         if (!Character.isLetter(simbol) && !Character.isDigit(simbol)) {
             System.out.println("Символ - не буква и не число");
         } 
+
+        System.out.println("");
+
+        int sum = 100_000;
+        int rate = 0;
+        int accrued = 0;
+        int total = 0; 
+
+        if (sum < 100_000) {            
+            accrued = sum / 100 * 5;
+        } else if (sum >= 100_000 && sum <= 300_000) {
+            accrued = sum / 100 * 7;
+        } else if (sum > 300_000) {
+            accrued = sum / 100 * 10;
+        } 
+
+        total = sum + accrued;
+
+            
+        System.out.println("Сумма вклада: " + sum + ", " + 
+                           "Начисленный процент: " + accrued + ", " +
+                           "Итоговая сумма: " +  total);
     }
 }
+
+
