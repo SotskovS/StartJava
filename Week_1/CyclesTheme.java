@@ -52,8 +52,35 @@ public class CyclesTheme {
             System.out.print(x);
         }
         
-        System.out.println("\n" + sum + "\n");
+        System.out.println("\n" + sum);
 
+        System.out.println("\n4. Вывод чисел на консоль в несколько строк");
 
+        int z = 0;
+        int d = 0;
+
+        
+        for (int i = 1; i < 24; i = i + 2) {
+            z = i;
+            d++;
+            
+
+            if (d <= 5) {
+                System.out.print(z + " ");
+            } else if (d == 6) {
+                System.out.println("\n");
+            }
+
+            if (d > 6 && d <= 11) {
+                System.out.print(z + " ");
+            } else if (d == 12) {
+                System.out.println("\n");
+            }
+
+            if (d > 11 && d <= 24) {
+                System.out.print(z + " ");
+            }            
+
+        }
     }
 }
