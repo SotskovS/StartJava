@@ -109,6 +109,21 @@ public class CyclesTheme {
                                " единиц(ы)");
         }
 
+        System.out.println("\n6. Отображение фигур в консоли");
+
+        for (int i = 1; i <= 50; i++ ) {
+            
+            System.out.print("*");
+
+            if (i != 0 && i % 10 == 0) {                
+                System.out.println("");
+            }
+        }
+
+
+        
+
+
 
     }
 }
