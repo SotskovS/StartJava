@@ -56,31 +56,59 @@ public class CyclesTheme {
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
 
-        int z = 0;
-        int d = 0;
-
+        int endNum = 24;
+        int numPosition = 0;
         
-        for (int i = 1; i < 24; i = i + 2) {
-            z = i;
-            d++;
-            
+        for (int i = 1; i < endNum; i = i + 2) {
+            numPosition++;            
 
-            if (d <= 5) {
-                System.out.print(z + " ");
-            } else if (d == 6) {
+            if (numPosition <= 5) {
+                System.out.print(i + " ");
+            } else if (numPosition == 6) {
                 System.out.println("\n");
             }
 
-            if (d > 6 && d <= 11) {
-                System.out.print(z + " ");
-            } else if (d == 12) {
+            if (numPosition > 6 && numPosition <= 11) {
+                System.out.print(i + " ");
+            } else if (numPosition == 12) {
                 System.out.println("\n");
             }
 
-            if (d > 11 && d <= 24) {
-                System.out.print(z + " ");
+            if (numPosition > 11 && numPosition <= endNum) {
+                System.out.print(i + " ");
             }            
-
         }
+
+        if ((numPosition/ 2 - 1) <= 15) {           
+            for (int i = 0; i < (15 - (endNum / 2 - 1)); i++ ) {                             
+                System.out.print(0 + " ");
+            }             
+        }    
+
+        System.out.println("\n\n5. Проверка количества единиц на четность");
+
+        int baseNum = 3141591;
+        int numOne = 0;
+        int countNumOne = 0;
+        num = baseNum;
+
+        while (num > 0) {
+            numOne = num % 10;
+            num = num / 10;
+
+            if (numOne == 1) {
+                countNumOne++;
+            }
+        }
+
+        if (countNumOne % 2 == 0) {
+            System.out.println("Число " + baseNum + " содержит " + countNumOne + 
+                               " единиц(ы)");
+        } else {
+            System.out.println("Число " + baseNum + " содержит " + countNumOne + 
+                               " единиц(ы)");
+        }
+
+
     }
 }
