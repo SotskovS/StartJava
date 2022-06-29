@@ -120,10 +120,45 @@ public class CyclesTheme {
             }
         }
 
+        System.out.println("");
 
+        int line = 0;
+        int count;        
+
+        while (line < 5) {
+            line++;
+            count = 6 - line;   
+
+            while (count > 0) {
+                System.out.print("#");                
+                count--;
+            }             
         
+            System.out.println("");
+        }
 
+        System.out.println("");
 
+        line = 1;        
+        count = 0;
+        int countMax = 3;
 
+        do {
+
+            count = 0;
+           
+            do {                
+                System.out.print("$");
+                count++;
+                if (count == countMax - 1) {
+                    break;
+                }
+            } while (count < line);
+            
+           
+        System.out.println("");    
+            line++;
+        } while(line < 5);
+        
     }
 }
