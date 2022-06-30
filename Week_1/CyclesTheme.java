@@ -173,5 +173,24 @@ public class CyclesTheme {
                 System.out.format("%20s", "Dec: " + i + " - Char: " + (char)i + "\n");
             }
         }        
+
+        System.out.println("\n8. Проверка, является ли число палиндромом"); 
+
+        boolean palindrom = false;
+
+        num = 1234321;
+        
+        
+        sum = 0;
+
+        while (num > 0) {
+            x = num % 10;
+            sum += x;
+            num /= 10;
+            System.out.print(x);
+        }
+        
+
+        
     }
 }
