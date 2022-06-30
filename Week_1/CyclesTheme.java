@@ -139,26 +139,39 @@ public class CyclesTheme {
 
         System.out.println("");
 
-        line = 1;        
-        count = 0;
-        int countMax = 3;
+        // line = 1;        
+        // count = 0;
+        // int countMax = 3;
 
-        do {
+        // do {
 
-            count = 0;
+        //     count = 0;
            
-            do {                
-                System.out.print("$");
-                count++;
-                if (count == countMax - 1) {
-                    break;
-                }
-            } while (count < line);
+        //     do {                
+        //         System.out.print("$");
+        //         count++;
+        //         if (count == countMax - 1) {
+        //             break;
+        //         }
+        //     } while (count < line);
             
            
-        System.out.println("");    
-            line++;
-        } while(line < 5);
+        // System.out.println("");    
+        //     line++;
+        // } while(line < 5);
         
+        System.out.println("\n7. Отображение ASCII-символов");       
+
+        for (int i = 1; i < 48; i++ ) {
+            if (i % 2 != 0) {
+                System.out.format("%20s", "Dec: " + i + " - Char: " + (char)i + "\n");
+            }
+        }
+
+        for (int i = 97; i < 123; i++ ) {
+            if (i % 2 == 0) {
+                System.out.format("%20s", "Dec: " + i + " - Char: " + (char)i + "\n");
+            }
+        }        
     }
 }
