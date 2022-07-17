@@ -8,7 +8,7 @@ public class VariablesTheme {
         int codeProduct = 00326; 
         long buildOS = 190441706L;
         float wightPC = 10.2f;
-        double weightMouse = 0.127;        
+        double weightMouse = 0.127; 
         char namePC = 'a';
         boolean windowsOS = true;
 
@@ -24,8 +24,7 @@ public class VariablesTheme {
         int discount = 11;
         
         int discountSum = (priceGoodsX + priceGoodsY) / 100 * discount;
-        int totalSum = (priceGoodsX - (priceGoodsX / 100 * discount) + 
-                       (priceGoodsX - (priceGoodsY / 100 * discount)));
+        int totalSum = (priceGoodsX + priceGoodsY) - discount;
         System.out.println("Сумма скидки: " + discountSum + "\n" +
                 "Итоговая стоимость товаров со скидкой: " + totalSum);
 
@@ -41,7 +40,7 @@ public class VariablesTheme {
                 "   " + jUpp + "   " + a + " " + a + "  "+ v + "  " + v + "  " + a + " " + a +
                 "\n" + jUpp +"  " + jUpp + "  " + a + a + a + a + a + "  "+ vUpp + vUpp + "  " +
                 a + a + a + a + a + "\n" + " " + jUpp + jUpp + "  " + a + "     " + a + "  " +
-                vUpp + " " + a + "     " + a + "\n");
+                vUpp + " " + a + "     " + a);
 
         System.out.println("\n4. Отображение min и max значений числовых типов данных");
 
@@ -73,16 +72,23 @@ public class VariablesTheme {
         num1 += num2;
         num2 = num1 - num2;
         num1 -= num2;
-        System.out.println("num1: " + num1 +", " + "num2: " +  num2 + "\n");
+        System.out.println("num1: " + num1 +", " + "num2: " +  num2);
 
-        System.out.println("- перестановка с помощью побитовых операций: \n"); 
+        System.out.println("- перестановка с помощью побитовых операций: \n" + 
+                "num1: " + num1 +", " + "num2: " +  num2); 
 
-        String binaryNum1 = Long.toBinaryString(Double.doubleToRawLongBits(num1));
-        String binaryNum2 = Long.toBinaryString(Double.doubleToRawLongBits(num2));
+        int num1Integer = (int) (num1 * 10);
+        int num2Integer = (int) (num2 * 10);
+                
+        int buffer = num1Integer ^ num2Integer;
+        num1Integer = buffer ^ num1Integer;
+        num2Integer = buffer ^ num2Integer;
+
+        num1 = (double) num1Integer / 10;
+        num2 = (double) num2Integer / 10;
+
+        System.out.println("num1: " + num1 +", " + "num2: " +  num2);
         
-        System.out.println(binaryNum1);
-        System.out.println(binaryNum2);
-
         System.out.println("\n6. Вывод символов и их кодов");
         
         char code1 = 35;
@@ -91,13 +97,13 @@ public class VariablesTheme {
         char code4 = 94;
         char code5 = 95;
 
-        System.out.println("Код символа: " + (int)code1 + ", Символ: " + code1);
-        System.out.println("Код символа: " + (int)code2 + ", Символ: " + code2);
-        System.out.println("Код символа: " + (int)code3 + ", Символ: " + code3);
-        System.out.println("Код символа: " + (int)code4 + ", Символ: " + code4);
-        System.out.println("Код символа: " + (int)code5 + ", Символ: " + code5);
+        System.out.println("Код символа: " + (int) code1 + ", Символ: " + code1);
+        System.out.println("Код символа: " + (int) code2 + ", Символ: " + code2);
+        System.out.println("Код символа: " + (int) code3 + ", Символ: " + code3);
+        System.out.println("Код символа: " + (int) code4 + ", Символ: " + code4);
+        System.out.println("Код символа: " + (int) code5 + ", Символ: " + code5);
 
-        System.out.println("7. Произведение и сумма цифр числа");    
+        System.out.println("7. Произведение и сумма цифр числа"); 
         int srcNum = 345;
         int digit1 = srcNum / 100;
         int digit2 = srcNum % 100 / 10; 
@@ -134,6 +140,6 @@ public class VariablesTheme {
         System.out.println("10. Преобразование секунд");
 
         int totalSeconds  = 86399;
-        System.out.println(totalSeconds  / 3600 + ":" + totalSeconds  / 60 % 60 + ":" + totalSeconds  % 60 % 60);
+        System.out.println(totalSeconds / 3600 + ":" + totalSeconds / 60 % 60 + ":" + totalSeconds % 60);
     }
 }
