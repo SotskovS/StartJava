@@ -22,34 +22,34 @@ public class CyclesTheme {
 
         System.out.println("\n2. Вывод чисел в интервале между (max и min)");
 
-        int a = 10;
-        int b = 5;
-        int c = -1;
+        int num1 = 10;
+        int num2 = 5;
+        int num3 = -1;
 
-        int max = a;
-        int min = a;
+        int max = num1;
+        int min = num1;
 
-        if (max < b) { max = b; };
-        if (max < c) { max = c; };
+        if (max < num2) { max = num2; };
+        if (max < num3) { max = num3; };
 
-        if (min > b) { min = b; };
-        if (min > c) { min = c; };
+        if (min > num2) { min = num2; };
+        if (min > num3) { min = num3; };
         
-        for (int i = max-1; i > min; i--) {
+        for (int i = max; i >= min; i--) {
             System.out.print(i + " ");
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
 
         num = 1234;
-        int x;
+        int tmp;
         int sum = 0;
 
         while (num > 0) {
-            x = num % 10;
-            sum += x;
+            tmp = num % 10;
+            sum += tmp;
             num /= 10;
-            System.out.print(x);
+            System.out.print(tmp);
         }
         
         System.out.println("\n" + sum);
@@ -184,10 +184,10 @@ public class CyclesTheme {
         sum = 0;
 
         while (num > 0) {
-            x = num % 10;
-            sum += x;
+            tmp = num % 10;
+            sum += tmp;
             num /= 10;
-            System.out.print(x);
+            System.out.print(tmp);
         }
         
 

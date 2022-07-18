@@ -1,6 +1,8 @@
 public class IfElseStatementTheme {
     
     public static void main(String[] args) {
+
+        System.out.println("\n1. Перевод псевдокода на язык Java");
         int age = 25;
         boolean man = true;
         float height = 1.7f;
@@ -30,10 +32,12 @@ public class IfElseStatementTheme {
             System.out.println("Имя начинается не на \"М\" и не на \"I\"");
         }
 
-        System.out.println("");
+        System.out.println("\n2. Поиск max и min числа");
 
-        int numOne = 4;
-        int numTwo = 6;
+        int numOne = 6;
+        int numTwo = 4;
+
+        System.out.println("Имеется 2 числа: " + numOne + " и " + numTwo);
 
         if (numOne > numTwo) {
             System.out.println("Число max: " + numOne + "; " + "Число min: " + numTwo);
@@ -41,9 +45,11 @@ public class IfElseStatementTheme {
             System.out.println("Число max: " + numTwo + "; " + "Число min: " + numOne);
         }
 
-        System.out.println("");
+        System.out.println("\n3. Работа с числом");
 
-        int num = -2;
+        int num = -3;
+
+        System.out.println("Исходное число: " + num);
 
         if (num == 0) {
             System.out.println("Число - 0");
@@ -61,7 +67,7 @@ public class IfElseStatementTheme {
             }
         }
 
-        System.out.println("");
+        System.out.println("\n4. Поиск одинаковых цифр в числах");
 
         numOne = 104;
         int numOne_X = numOne / 100;
@@ -106,7 +112,7 @@ public class IfElseStatementTheme {
                 " одинаковые цифры \"" + numOne_Z + "\" стоят в 3 разряде");            
         } 
 
-        System.out.println("");
+        System.out.println("\n5. Определение буквы, числа или символа по их коду");
 
         char simbol = '\u0057';
 
@@ -128,7 +134,7 @@ public class IfElseStatementTheme {
             System.out.println("Символ - не буква и не число");
         } 
 
-        System.out.println("");
+        System.out.println("\n6. Определение суммы вклада и начисленных банком %");
 
         int sum = 100_000;
         int rate = 0;
@@ -146,17 +152,17 @@ public class IfElseStatementTheme {
         total = sum + accrued;
             
         System.out.println("Сумма вклада: " + sum + ", " + 
-                           "Начисленный процент: " + accrued + ", " +
-                           "Итоговая сумма: " +  total);
+                "Начисленный процент: " + accrued + ", " +
+                "Итоговая сумма: " +  total);
 
-        System.out.println("");
+        System.out.println("\n7. Определение оценки по предметам");
 
         int history = 59;
         int programming = 91;
         int resultHistory = 0;
         int resultProgramming = 0;
-        float averageResult = 0;
-        float averagePercent = 0;
+        int averageResult = 0;
+        int averagePercent = 0;
 
         if (history > 91) {
             resultHistory = 5;
@@ -183,10 +189,10 @@ public class IfElseStatementTheme {
         averagePercent = (history + programming) / 2;
 
         System.out.println(resultHistory + " - История, " + resultProgramming + 
-                           " - Программирование \n" + "Средний балл: " + averageResult + 
-                           "\nСредний процент по предметам: " + averagePercent);
+                " - Программирование \n" + "Средний балл: " + averageResult + 
+                "\nСредний процент по предметам: " + averagePercent);
 
-        System.out.println("");
+        System.out.println("\n8. Расчет прибыли");
 
         int rent = 5000;
         int averageSales = 13000;
@@ -196,12 +202,12 @@ public class IfElseStatementTheme {
         annualProfit = (averageSales - productionCost - rent) * 12;
 
         if (annualProfit > 0) {
-            System.out.println("Годовая прибыль: +" + annualProfit +" руб.");
+            System.out.println("Прибыль за год: +" + annualProfit +" руб.");
         } else {
-            System.out.println("Годовая прибыль: " + annualProfit + " руб.");
+            System.out.println("Прибыль за год: " + annualProfit + " руб.");
         }
 
-        System.out.println("");
+        System.out.println("\n9. Подсчет количества банкнот");
 
         sum = 567;
 
@@ -218,16 +224,16 @@ public class IfElseStatementTheme {
 
         if (banknote10 > 5) {
             banknote1 = (banknote10 - 5) * 10 + banknote1;
-            banknote10 = 5;
+            
             System.out.println("Номиналы банкнот: 100USD, 10USD, 1USD \n" + 
-                           "Количество: " + "100USD - " + banknote100 + 
-                           ", 10USD - " + banknote10 + ", 1USD - " + banknote1 +
-                           "\nИсходная сумма: " + totalSum + "USD");
+                    "Количество: " + "100USD - " + banknote100 + 
+                    ", 10USD - " + banknote10 + ", 1USD - " + banknote1 +
+                    "\nИсходная сумма: " + totalSum + "USD");
         } else {
             System.out.println("Номиналы банкнот: 100USD, 10USD, 1USD \n" + 
-                           "Количество: " + "100USD - " + banknote100 + 
-                           ", 10USD - " + banknote10 + ", 1USD - " + banknote1 +
-                           "\nИсходная сумма: " + totalSum + "USD");
+                    "Количество: " + "100USD - " + banknote100 + 
+                    ", 10USD - " + banknote10 + ", 1USD - " + banknote1 +
+                    "\nИсходная сумма: " + totalSum + "USD");
         }
     }
 }
