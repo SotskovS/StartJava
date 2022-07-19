@@ -58,32 +58,22 @@ public class CyclesTheme {
 
         int endNum = 24;
         int numPosition = 0;
-        
-        for (int i = 1; i < endNum; i = i + 2) {
-            numPosition++;            
+            
+         for (int i = 1; i < endNum; i += 2) {
+            numPosition++;
+            System.out.printf("%3d", i);
 
-            if (numPosition <= 5) {
-                System.out.print(i + " ");
-            } else if (numPosition == 6) {
-                System.out.println("\n");
+            if (numPosition == 5) {
+                System.out.println("");
+                numPosition = 0;
             }
-
-            if (numPosition > 6 && numPosition <= 11) {
-                System.out.print(i + " ");
-            } else if (numPosition == 12) {
-                System.out.println("\n");
-            }
-
-            if (numPosition > 11 && numPosition <= endNum) {
-                System.out.print(i + " ");
-            }            
         }
 
-        if ((numPosition/ 2 - 1) <= 15) {           
-            for (int i = 0; i < (15 - (endNum / 2 - 1)); i++ ) {                             
-                System.out.print(0 + " ");
+        if ((numPosition / 2 - 1) <= 15) {           
+            for (int i = 0; i < (15 - (endNum / 2)); i++ ) {  
+                System.out.printf("%3d", 0);
             }             
-        }    
+        }         
 
         System.out.println("\n\n5. Проверка количества единиц на четность");
 
@@ -99,14 +89,12 @@ public class CyclesTheme {
             if (numOne == 1) {
                 countNumOne++;
             }
-        }
+        }       
 
         if (countNumOne % 2 == 0) {
-            System.out.println("Число " + baseNum + " содержит " + countNumOne + 
-                               " единиц(ы)");
+            System.out.println("Число " + baseNum + " содержит " + countNumOne + " единиц(ы)");
         } else {
-            System.out.println("Число " + baseNum + " содержит " + countNumOne + 
-                               " единиц(ы)");
+            System.out.println("Число " + baseNum + " содержит " + countNumOne + " единиц(ы)");
         }
 
         System.out.println("\n6. Отображение фигур в консоли");
@@ -139,56 +127,56 @@ public class CyclesTheme {
 
         System.out.println("");
 
-        // line = 1;        
-        // count = 0;
-        // int countMax = 3;
+        line = 1;        
+        count = 0;
+        int countMax = 3;
 
-        // do {
+        do {
 
-        //     count = 0;
+            count = 0;
            
-        //     do {                
-        //         System.out.print("$");
-        //         count++;
-        //         if (count == countMax - 1) {
-        //             break;
-        //         }
-        //     } while (count < line);
+            do {                
+                System.out.print("$");
+                count++;
+                if (count == countMax - 1) {
+                    break;
+                }
+            } while (count < line);
             
            
-        // System.out.println("");    
-        //     line++;
-        // } while(line < 5);
+        System.out.println("");    
+            line++;
+        } while(line < 5);
         
-        System.out.println("\n7. Отображение ASCII-символов");       
+        // System.out.println("\n7. Отображение ASCII-символов");       
 
-        for (int i = 1; i < 48; i++ ) {
-            if (i % 2 != 0) {
-                System.out.format("%20s", "Dec: " + i + " - Char: " + (char)i + "\n");
-            }
-        }
+        // for (int i = 1; i < 48; i++ ) {
+        //     if (i % 2 != 0) {
+        //         System.out.format("%20s", "Dec: " + i + " - Char: " + (char)i + "\n");
+        //     }
+        // }
 
-        for (int i = 97; i < 123; i++ ) {
-            if (i % 2 == 0) {
-                System.out.format("%20s", "Dec: " + i + " - Char: " + (char)i + "\n");
-            }
-        }        
+        // for (int i = 97; i < 123; i++ ) {
+        //     if (i % 2 == 0) {
+        //         System.out.format("%20s", "Dec: " + i + " - Char: " + (char)i + "\n");
+        //     }
+        // }        
 
-        System.out.println("\n8. Проверка, является ли число палиндромом"); 
+        // System.out.println("\n8. Проверка, является ли число палиндромом"); 
 
-        boolean palindrom = false;
+        // boolean palindrom = false;
 
-        num = 1234321;
+        // num = 1234321;
         
         
-        sum = 0;
+        // sum = 0;
 
-        while (num > 0) {
-            tmp = num % 10;
-            sum += tmp;
-            num /= 10;
-            System.out.print(tmp);
-        }
+        // while (num > 0) {
+        //     tmp = num % 10;
+        //     sum += tmp;
+        //     num /= 10;
+        //     System.out.print(tmp);
+        // }
         
 
         

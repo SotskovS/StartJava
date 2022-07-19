@@ -2,9 +2,9 @@ public class IfElseStatementTheme {
     
     public static void main(String[] args) {
 
-        System.out.println("\n1. Перевод псевдокода на язык Java");
+        System.out.println("1. Перевод псевдокода на язык Java");
         int age = 25;
-        boolean man = true;
+        boolean male = true;
         float height = 1.7f;
 
         if (age > 20) {
@@ -13,7 +13,7 @@ public class IfElseStatementTheme {
             System.out.println("Молодой");
         }
 
-        if (!man) {
+        if (!male) {
             System.out.println("Женщина");
         }
 
@@ -77,61 +77,47 @@ public class IfElseStatementTheme {
         int numTwo_X = numTwo / 100;
         int numTwo_Y = numTwo % 100 / 10;
         int numTwo_Z = numTwo % 10;
-        boolean a = false;
-        boolean b = false;
-        boolean c = false;
 
-        if (numOne_X == numTwo_X) { a = true; }
-        if (numOne_Y == numTwo_Y) { b = true; }
-        if (numOne_Z == numTwo_Z) { c = true; }
-
-        if (a && b && c) {
+        if ((numOne_X == numTwo_X) & (numOne_Y == numTwo_Y) & (numOne_Z == numTwo_Z)) {
             System.out.println("В числах " + numOne + " и " + numTwo + 
                 " одинаковые цифры " + numOne_X + ", " + numOne_Y + ", " +
                 numOne_Z + " стоят в 1, 2, 3 разрядах");
-        } else if (a && b) {
+        } else if ((numOne_X == numTwo_X) && (numOne_Y == numTwo_Y)) {
             System.out.println("В числах " + numOne + " и " + numTwo + 
                 " одинаковые цифры " + numOne_X + ", " + numOne_Y +
                 " стоят в 1, 2 разрядах");            
-        } else if (b && c) {
+        } else if ((numOne_Y == numTwo_Y) & (numOne_Z == numTwo_Z)) {
             System.out.println("В числах " + numOne + " и " + numTwo + 
                 " одинаковые цифры " + numOne_Y + ", " + numOne_Z +
                 " стоят в 2, 3 разрядах");            
-        } else if (a && c) {
+        } else if (numOne_X == numTwo_X & numOne_Z == numTwo_Z) {
             System.out.println("В числах " + numOne + " и " + numTwo + 
                 " одинаковые цифры " + numOne_X + ", " + numOne_Z +
                 " стоят в 1, 3 разрядах");            
-        } else if (a) {
+        } else if (numOne_X == numTwo_X) {
             System.out.println("В числах " + numOne + " и " + numTwo + 
                 " одинаковые цифры \"" + numOne_X + "\" стоят в 1 разряде");            
-        } else if (b) {
+        } else if (numOne_Y == numTwo_Y) {
             System.out.println("В числах " + numOne + " и " + numTwo + 
                 " одинаковые цифры \"" + numOne_Y + "\" стоят в 2 разряде");            
-        } else if (c) {
+        } else if (numTwo_Z == numTwo_Z) {
             System.out.println("В числах " + numOne + " и " + numTwo + 
                 " одинаковые цифры \"" + numOne_Z + "\" стоят в 3 разряде");            
         } 
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду");
 
-        char simbol = '\u0057';
-
-        System.out.println(simbol + ": ");
-
-        if (Character.isUpperCase(simbol)) {
+        char someChar = '\u002F';
+        
+        System.out.println("Символ: " + someChar);
+        if (someChar >= '\u0041' && someChar <= '\u005A') {            
             System.out.println("Символ - большая буква");
-        } else {    
+        } else if (someChar >= '\u0061' && someChar <= '\u007A') {
             System.out.println("Символ - маленькая буква");
-        }
-
-        if (Character.isDigit(simbol)) {
+        } else if (someChar >= '\u0030' && someChar <= '\u0039') {
             System.out.println("Символ - число");
         } else {
-            System.out.println("Символ - не число");
-        }
-
-        if (!Character.isLetter(simbol) && !Character.isDigit(simbol)) {
-            System.out.println("Символ - не буква и не число");
+            System.out.println("Символ - не буква и не число");                
         } 
 
         System.out.println("\n6. Определение суммы вклада и начисленных банком %");
@@ -157,38 +143,34 @@ public class IfElseStatementTheme {
 
         System.out.println("\n7. Определение оценки по предметам");
 
-        int history = 59;
-        int programming = 91;
-        int resultHistory = 0;
-        int resultProgramming = 0;
-        int averageResult = 0;
-        int averagePercent = 0;
-
-        if (history > 91) {
-            resultHistory = 5;
-        } else if (history > 73) {
-            resultHistory = 4;             
-        } else if (history > 60) {
-            resultHistory = 3;             
-        } else if (history <= 60) {
-            resultHistory = 2;             
+        int historyResult = 59;
+        int historyGrade = 0;
+        if (historyResult > 91) {
+            historyGrade = 5;
+        } else if (historyResult > 73) {
+            historyGrade = 4;             
+        } else if (historyResult > 60) {
+            historyGrade = 3;             
+        } else if (historyResult <= 60) {
+            historyGrade = 2;             
         }
 
-        if (programming > 91) {
-            resultProgramming = 5;
-        } else if (programming > 73) {
-            resultProgramming = 4;             
-        } else if (programming > 60) {
-            resultProgramming = 3;             
-        } else if (programming <= 60) {
-            resultProgramming = 2;             
+        int programmingResult = 91;
+        int programmingGrade = 0;
+        if (programmingResult > 91) {
+            programmingGrade = 5;
+        } else if (programmingResult > 73) {
+            programmingGrade = 4;             
+        } else if (programmingResult > 60) {
+            programmingGrade = 3;             
+        } else if (programmingResult <= 60) {
+            programmingGrade = 2;             
         }
 
-        averageResult = (resultHistory + resultProgramming) / 2;
+        int averageResult = (historyGrade + programmingGrade) / 2;
+        int averagePercent = (historyResult + programmingResult) / 2;
 
-        averagePercent = (history + programming) / 2;
-
-        System.out.println(resultHistory + " - История, " + resultProgramming + 
+        System.out.println(historyGrade + " - История, " + programmingGrade + 
                 " - Программирование \n" + "Средний балл: " + averageResult + 
                 "\nСредний процент по предметам: " + averagePercent);
 
