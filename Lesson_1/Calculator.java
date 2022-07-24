@@ -2,8 +2,8 @@ public class Calculator {
 
     public static void main(String[] args) {
         int a = 2;
-        int b = 1;
-        char sign = '/';
+        int b = 5;
+        char sign = '*';
         int result = 1;
 
         if (b == 0) {
