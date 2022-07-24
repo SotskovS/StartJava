@@ -7,12 +7,12 @@ public class CyclesTheme {
         int sumOdd = 0;
 
         do {
-            counter++;
             if (counter % 2 == 0) {
                 sumEven += counter;
             } else  {
                 sumOdd += counter;
             }
+            counter++;
         } while (counter <= 21);
 
         System.out.println("Сумма четных чисел: " + sumEven + 
@@ -55,19 +55,19 @@ public class CyclesTheme {
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
 
         int endRange = 24;
-        int numberDigitsInString = 0;
+        int countNumbersPerLine = 0;
             
          for (int i = 1; i < endRange; i += 2) {
-            numberDigitsInString++;
+            countNumbersPerLine++;
             System.out.printf("%3d", i);
 
-            if (numberDigitsInString == 5) {
+            if (countNumbersPerLine == 5) {
                 System.out.println();
-                numberDigitsInString = 0;
+                countNumbersPerLine = 0;
             }
         }
        
-        for (int i = 0; i < 5 - numberDigitsInString; i++) {
+        for (int i = 0; i < 5 - countNumbersPerLine; i++) {
             System.out.printf("%3d", 0);
         }
 
@@ -123,31 +123,26 @@ public class CyclesTheme {
 
         System.out.println();
 
-        countLines = 1;
-        int j = 1;
-        
-        do {
-            countLines++;
-            countSymbols = 1;
-            j +=1;
+        int rowCounter = 0;
+        int symCounter;
+        counter = 0;
+        int j = 1;        
 
-            if (countLines > 4) {
-                j = 3;
-                countSymbols = 1;
-            } 
-
-            if (countLines > 5) {
-                j = 1;
-                countSymbols = 0;
-            }  
+         do {
+            symCounter = 0;
 
             do {
                 System.out.print("$");
-                countSymbols++;
-            } while (countSymbols < j);
+            } while (++symCounter <= rowCounter);
+
+            if (++counter <= 2) {
+                rowCounter++;
+            } else {
+                rowCounter--;
+            }
 
             System.out.println();
-        } while (countLines <= 5);
+        } while (rowCounter >= 0);
             
         System.out.println("\n7. Отображение ASCII-символов");
 
@@ -194,14 +189,13 @@ public class CyclesTheme {
         while (tmp > 0) {
             counter--;
 
-            if (counter >= 3) {
-                int lastDigit = tmp % 10;
-                sumLastDigits = sumLastDigits + lastDigit;
-                tmp /= 10;                
-            } else {
-                int lastDigit = tmp % 10;
-                sumDigits = sumDigits + lastDigit;
-                tmp /= 10;                
+            int lastDigit = tmp % 10;
+            tmp /= 10;
+
+            if (counter >= 3) {                
+                sumLastDigits += lastDigit;                
+            } else {                
+                sumDigits += lastDigit;                
             }
         }
 
