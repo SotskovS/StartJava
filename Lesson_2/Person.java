@@ -10,7 +10,7 @@ public class Person {
         System.out.println("Человек идет");
     }
 
-    public void sit () {
+    public void sit() {
         System.out.println("Человек сидит");
     }
 
