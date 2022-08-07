@@ -1,6 +1,6 @@
 public class JaegerTest {
     public static void main(String[] args) {
-        Jaeger robot1 = new Jaeger("", "", "", 0, 0, 0, 0, 0);
+        Jaeger robot1 = new Jaeger();
 
         robot1.setModelName("Horison Brave");
         robot1.setMark("Mark-1");

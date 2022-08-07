@@ -1,8 +1,7 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
         String userAnswer;
@@ -20,25 +19,19 @@ public class CalculatorTest {
             int b = scan.nextInt();
             calc.setB(b);
 
-            System.out.println(calc.getResult());
+            System.out.println(calc.calculate());
 
-            System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-            userAnswer = scan.next();
-
-            if (!userAnswer.equals("no") && !userAnswer.equals("yes")) {
-                boolean flag;
-                do {
-                    System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                    userAnswer = scan.next();
-                    if (userAnswer.equals("no")) {
-                        flag = false;
-                    } else if(userAnswer.equals("yes")) {
-                        flag = false;
-                    } else {
-                        flag = true;
-                    }
-                } while (flag);
-            } 
+            boolean flag;
+            do {
+                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
+                userAnswer = scan.next();
+                
+                if (userAnswer.equals("yes") || userAnswer.equals("no")) {                    
+                    flag = false;
+                } else {
+                    flag = true;
+                }
+            } while (flag);
          } while(!userAnswer.equals("no"));
     }
 }
