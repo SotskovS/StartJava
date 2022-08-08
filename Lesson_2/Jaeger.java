@@ -10,6 +10,7 @@ public class Jaeger {
     private int armor;
 
     public Jaeger() {};
+    
     public Jaeger(String modelName, String mark, String origin, float height, float weight,
         int speed, int strength, int armor) {
         this.modelName = modelName;

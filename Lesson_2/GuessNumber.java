@@ -2,61 +2,51 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-    private int compNum;
+    private int targetNum;
     private int playerNum;
     private String playerName1;
     private String playerName2; 
     
-    public void setCompNum() {
+    public void generateSecretNum() {
         Random random = new Random();
-        compNum = random.nextInt(1, 101);
-        this.compNum = compNum;
+        targetNum = random.nextInt(1, 101);
+        this.targetNum = targetNum;
     }
 
     public int getCompNum() {
-        return compNum;
-    }
-
-    public void setPlayerNum(int playerNum) {
-        this.playerNum = playerNum;
+        return targetNum;
     }
 
     public int getPlayerNum() {
         return playerNum;
     }
 
-    public void setPlayerName1(String playerName1) {
-        this.playerName1 = playerName1;        
-    }
+    public void launch() {
+        Scanner scan = new Scanner(System.in);  
+        generateSecretNum();
 
-    public void setPlayerName2(String playerName2) {
-        this.playerName2 = playerName2;        
-    }    
-
-    public void game() {
         int count = 1;
 
         do {            
             if (count == 1) {
-                System.out.print(playerName1 + " введите число от 1 до 100: ");
+                System.out.print(" введите число от 1 до 100: ");
                 count = 2;
             } else {
-                System.out.print(playerName2 + " введите число от 1 до 100: ");
+                System.out.print(" введите число от 1 до 100: ");
                 count = 1;
             }       
 
-            Scanner scan = new Scanner(System.in);    
             playerNum = scan.nextInt();
 
-            if (playerNum < compNum) {
+            if (playerNum < targetNum) {
                 System.out.println(playerNum + " меньше того, что загадал компьютер");                
-            } else if (playerNum > compNum) {
+            } else if (playerNum > targetNum) {
                 System.out.println(playerNum + " больше того, что загадал компьютер");                
             } 
-            if (playerNum == compNum) {
+            if (playerNum == targetNum) {
                 System.out.println( "Вы победили!");                
-                System.out.println(compNum);
+                System.out.println(targetNum);
             }
-        } while (playerNum != compNum);
+        } while (playerNum != targetNum);
     }
 }
