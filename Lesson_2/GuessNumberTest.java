@@ -11,28 +11,16 @@ public class GuessNumberTest {
         System.out.print("Введите имя второго игрока: ");
         Player player2 = new Player(scan.nextLine());
 
+        GuessNumber game = new GuessNumber();           
+        game.launch(player1.getName(), player2.getName());
+        
         do {
-            GuessNumber game = new GuessNumber();           
-            game.launch();
-
             System.out.print("Хотите продолжить игру? [yes/no]: ");
             playerAnswer = scan.next();
 
             if (playerAnswer.equals("yes")) {
-                game.launch();                
+                game.launch(player1.getName(), player2.getName());
             }
-
-            boolean flag = false;
-            do {
-                System.out.print("Хотите продолжить игру? [yes/no]: ");
-                playerAnswer = scan.next();
-
-                if (playerAnswer.equals("yes") || playerAnswer.equals("no")) {                    
-                    flag = false;
-                } else {
-                    flag = true;
-                }
-            } while (flag);
         } while(!playerAnswer.equals("no"));
     }
 }

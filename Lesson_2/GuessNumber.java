@@ -4,35 +4,24 @@ import java.util.Scanner;
 public class GuessNumber {
     private int targetNum;
     private int playerNum;
-    private String playerName1;
-    private String playerName2; 
     
-    public void generateSecretNum() {
+    private void generateSecretNum() {
         Random random = new Random();
         targetNum = random.nextInt(1, 101);
-        this.targetNum = targetNum;
     }
 
-    public int getCompNum() {
-        return targetNum;
-    }
-
-    public int getPlayerNum() {
-        return playerNum;
-    }
-
-    public void launch() {
-        Scanner scan = new Scanner(System.in);  
+    public void launch(String player1, String player2) {
         generateSecretNum();
+        Scanner scan = new Scanner(System.in);  
 
         int count = 1;
 
         do {            
             if (count == 1) {
-                System.out.print(" введите число от 1 до 100: ");
+                System.out.print(player1 + " введите число от 1 до 100: ");
                 count = 2;
             } else {
-                System.out.print(" введите число от 1 до 100: ");
+                System.out.print(player2 + " введите число от 1 до 100: ");
                 count = 1;
             }       
 
@@ -46,7 +35,7 @@ public class GuessNumber {
             if (playerNum == targetNum) {
                 System.out.println( "Вы победили!");                
                 System.out.println(targetNum);
-            }
+            }                
         } while (playerNum != targetNum);
     }
 }
