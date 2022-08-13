@@ -16,12 +16,15 @@ public class GuessNumberTest {
         do {
             game.launch();                
             
-            System.out.print("Хотите продолжить игру? [yes/no]: ");
-            playerAnswer = scan.next();
-
-            if (!playerAnswer.equals("yes")) {
+            do {    
                 System.out.print("Хотите продолжить игру? [yes/no]: ");
-            }
+                playerAnswer = scan.next();
+
+                if (playerAnswer.equals("no")) {
+                    break;
+                }
+                
+            } while(!playerAnswer.equals("yes"));
 
         } while(!playerAnswer.equals("no"));
     }
