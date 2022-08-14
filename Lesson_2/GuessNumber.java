@@ -13,38 +13,35 @@ public class GuessNumber {
     }
 
     public void launch() {
-        Scanner scan = new Scanner(System.in);
-        boolean result;
+        Scanner scan = new Scanner(System.in);        
 
         generateSecretNum();        
         do {
             System.out.print(player1.getName() + " введите число от 1 до 100: ");   
-            playerNum = scan.nextInt();
-            result = checkNumber(player1);
+            playerNum = scan.nextInt();            
 
-            if (result) {
-                System.out.print(player2.getName() + " введите число от 1 до 100: ");    
-                playerNum = scan.nextInt();
-                result = checkNumber(player2);
+            if (checkNumber(player1)) {
+                break;
             }            
-        } while (result);
+            System.out.print(player2.getName() + " введите число от 1 до 100: ");    
+            playerNum = scan.nextInt();                
+        } while (!checkNumber(player2));
     }
 
     private void generateSecretNum() {
         Random random = new Random();
-        targetNum = random.nextInt(1, 2);
+        targetNum = random.nextInt(1, 101);
     }
 
     private boolean checkNumber(Player player) {
-        if (playerNum < targetNum) {
-             System.out.println(playerNum + " меньше того, что загадал компьютер");
-             return true;
+        if (playerNum == targetNum) {
+            System.out.println(player.getName() + " Вы победили!");
+            return true;    
+        } else if (playerNum < targetNum) {
+             System.out.println(playerNum + " меньше того, что загадал компьютер");             
         } else if (playerNum > targetNum) {
-             System.out.println(playerNum + " больше того, что загадал компьютер");
-             return true;
-        } else {
-             System.out.println(player.getName() + " Вы победили!");
-             return false;
-        } 
+             System.out.println(playerNum + " больше того, что загадал компьютер");             
+        }
+        return false;      
     }
 }
