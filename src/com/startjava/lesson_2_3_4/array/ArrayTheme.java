@@ -1,30 +1,34 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.sql.SQLOutput;
-import java.util.Scanner;
+import java.text.DecimalFormat;
+import java.util.Random;
 
 public class ArrayTheme {
     public static void main(String[] args) {
-//        int[] intArr = {6, 4, 7, 2, 1, 3, 5};
-//
-//        for (int x : intArr) {
-//            System.out.print(x + " ");
-//        }
-//
-//        int lengthArr = intArr.length;
-//        int tmp;
-//        for (int i = 0; i < lengthArr / 2; i++) {
-//            tmp = intArr[lengthArr - i - 1];
-//            intArr[lengthArr - i - 1] = intArr[i];
-//            intArr[i] = tmp;
-//        }
-//
-//        System.out.println();
-//        for (int x : intArr) {
-//            System.out.print(x + " ");
-//        }
+        int lengthArr;
+        System.out.println("1. Реверс значений массива");
+        int[] intArr = {6, 4, 7, 2, 1, 3, 5};
 
-        int[] intArr = new int[10];
+        for (int x : intArr) {
+            System.out.print(x + " ");
+        }
+
+        lengthArr = intArr.length;
+        int tmp;
+        for (int i = 0; i < lengthArr / 2; i++) {
+            tmp = intArr[lengthArr - i - 1];
+            intArr[lengthArr - i - 1] = intArr[i];
+            intArr[i] = tmp;
+        }
+
+        System.out.println();
+        for (int x : intArr) {
+            System.out.print(x + " ");
+        }
+
+        System.out.println("\n\n2. Вывод произведения элементов массива");
+
+        intArr = new int[10];
 
         for (int i = 0; i < intArr.length; i++) {
             intArr[i] = i;
@@ -46,10 +50,44 @@ public class ArrayTheme {
                 indexLast = index;
             }
         }
-
         System.out.println("значение: " + intArr[0] + " имеет индекс - " + indexFirst + "; " +
-                "значение: " + intArr[9] + " имеет индекс - " + indexLast);
+            "значение: " + intArr[9] + " имеет индекс - " + indexLast);
 
+        System.out.println("\n3. Удаление элементов массива");
+
+        float[] floatArr = new float[15];
+        lengthArr = floatArr.length;
+        Random random = new Random();
+        DecimalFormat dF = new DecimalFormat("0.000");
+
+        for (int i = 0; i < lengthArr; i++) {
+            floatArr[i] = random.nextFloat(0.0f, 1.0f);
+        }
+
+        int middleIndexArr = lengthArr / 2;
+        float numberInMiddleIndex = floatArr[middleIndexArr];
+
+        for (int i = 0; i < lengthArr; i++) {
+            System.out.printf("%6s", dF.format(floatArr[i]) + " ");
+            if (i == 7) System.out.println();
+        }
+
+        int countZeroCell = -1;
+        for (int i = 0; i < lengthArr; i++) {
+            if (floatArr[i] > numberInMiddleIndex) {
+                floatArr[i] = 0;
+                countZeroCell++;
+            }
+        }
+
+        System.out.println("\n");
+
+        for (int i = 0; i < lengthArr; i++) {
+            System.out.printf("%6s", dF.format(floatArr[i]) + " ");
+            if (i == 7) System.out.println();
+        }
+
+        System.out.println("\nКоличество обнуленных ячеек: " + countZeroCell);
     }
 }
 
