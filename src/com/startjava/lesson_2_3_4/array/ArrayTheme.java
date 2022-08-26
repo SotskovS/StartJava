@@ -88,6 +88,26 @@ public class ArrayTheme {
         }
 
         System.out.println("\nКоличество обнуленных ячеек: " + countZeroCell);
+
+        System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
+
+        char[] charArr = new char[26];
+        lengthArr = charArr.length;
+        int index = 0;
+
+        for (char letter = 'A'; letter <= 'Z'; letter++) {
+            charArr[index] = letter;
+            index++;
+        }
+
+        int countLines = 0;
+        while (countLines < lengthArr) {
+            countLines++;
+            for (int i = 1; i <= countLines; i++) {
+                System.out.print(charArr[lengthArr - i]);
+            }
+            System.out.println();
+        }
     }
 }
 
