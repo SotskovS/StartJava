@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class ArrayTheme {
     public static void main(String[] args) {
-        int lengthArr;
         System.out.println("1. Реверс значений массива");
         int[] intArr = {6, 4, 7, 2, 1, 3, 5};
 
@@ -13,7 +12,7 @@ public class ArrayTheme {
             System.out.print(x + " ");
         }
 
-        lengthArr = intArr.length;
+        int lengthArr = intArr.length;
         int tmp;
         for (int i = 0; i < lengthArr / 2; i++) {
             tmp = intArr[lengthArr - i - 1];
@@ -51,7 +50,7 @@ public class ArrayTheme {
             }
         }
         System.out.println("значение: " + intArr[0] + " имеет индекс - " + indexFirst + "; " +
-            "значение: " + intArr[9] + " имеет индекс - " + indexLast);
+                "значение: " + intArr[9] + " имеет индекс - " + indexLast);
 
         System.out.println("\n3. Удаление элементов массива");
 
@@ -108,34 +107,46 @@ public class ArrayTheme {
             }
             System.out.println();
         }
+
+        System.out.println("\n5. Генерация уникальных чисел");
+        intArr = new int[30];
+        lengthArr = intArr.length;
+
+        boolean flag = true;
+
+        for (int i = 0; i < lengthArr; ) {
+            int targetNum = random.nextInt(60, 100);
+
+            for (int k = 0; k < lengthArr; ++k) {
+                if (intArr[k] == targetNum) {
+                    flag = false;
+                }
+            }
+
+            if (flag) {
+                intArr[i] = targetNum;
+                i++;
+            }
+            flag = true;
+        }
+
+        for (int i = lengthArr - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (intArr[j] > intArr[j + 1]) {
+                    tmp = intArr[j];
+                    intArr[j] = intArr[j + 1];
+                    intArr[j + 1] = tmp;
+                }
+            }
+        }
+
+        int count = 0;
+        for (int g : intArr) {
+            count++;
+            System.out.print(g + " ");
+            if (count % 10 == 0) {
+                System.out.println();
+            }
+        }
     }
 }
-
-
-//    public static void main(String[] args) {
-//        Scanner scan = new Scanner(System.in);
-//
-//        System.out.println("Inter length array: ");
-//        int maxLength = scan.nextInt();
-//        int[] numbers = new int[maxLength];
-//
-//        System.out.print("Full array ");
-//
-//        for (int i = 0; i < maxLength; i++) {
-//            numbers[i] = scan.nextInt();
-//        }
-//
-//        int max = numbers[0];
-//
-//        for (int i = 0; i < maxLength - 1; i++) {
-//            if(max < numbers[i + 1]) {
-//                max = numbers[i + 1];
-//            }
-//        }
-//
-//        for (int i : numbers) {
-//            System.out.println(i);
-//        }
-//        System.out.println(max);
-//    }
-//}
