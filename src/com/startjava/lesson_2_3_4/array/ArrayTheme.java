@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.text.DecimalFormat;
 import java.util.Random;
 
 public class ArrayTheme {
@@ -8,72 +7,62 @@ public class ArrayTheme {
         System.out.println("1. Реверс значений массива");
         int[] intArr = {6, 4, 7, 2, 1, 3, 5};
 
-        for (int x : intArr) {
-            System.out.print(x + " ");
+        for (int num : intArr) {
+            System.out.print(num + " ");
         }
 
-        int lengthArr = intArr.length;
-        int tmp;
-        for (int i = 0; i < lengthArr / 2; i++) {
-            tmp = intArr[lengthArr - i - 1];
-            intArr[lengthArr - i - 1] = intArr[i];
+        int len = intArr.length;
+
+        for (int i = 0; i < len / 2; i++) {
+            int tmp = intArr[len - 1 - i];
+            intArr[len - i - 1] = intArr[i];
             intArr[i] = tmp;
         }
 
         System.out.println();
-        for (int x : intArr) {
-            System.out.print(x + " ");
+        for (int num : intArr) {
+            System.out.print(num + " ");
         }
 
         System.out.println("\n\n2. Вывод произведения элементов массива");
 
         intArr = new int[10];
+        len = intArr.length;
 
-        for (int i = 0; i < intArr.length; i++) {
+        for (int i = 0; i < len; i++) {
             intArr[i] = i;
         }
 
         int sum = 0;
-        for (int i = 1; i < intArr.length - 1; i++) {
+        for (int i = 1; i < len - 1; i++) {
             sum += intArr[i];
             System.out.print(i < 8 ? i + " + " : i + " = ");
         }
         System.out.println(sum);
 
-        int indexFirst = 0;
-        int indexLast = 0;
-        for (int index : intArr) {
-            if (intArr[index] == 0) {
-                indexFirst = index;
-            } else if (intArr[index] == 9) {
-                indexLast = index;
-            }
-        }
-        System.out.println("значение: " + intArr[0] + " имеет индекс - " + indexFirst + "; " +
-                "значение: " + intArr[9] + " имеет индекс - " + indexLast);
+        System.out.println("значение: " + intArr[0] + " имеет индекс - 0; " +
+                "значение: " + intArr[9] + " имеет индекс - 9");
 
         System.out.println("\n3. Удаление элементов массива");
 
         float[] floatArr = new float[15];
-        lengthArr = floatArr.length;
+        len = floatArr.length;
         Random random = new Random();
-        DecimalFormat dF = new DecimalFormat("0.000");
 
-        for (int i = 0; i < lengthArr; i++) {
+        for (int i = 0; i < len; i++) {
             floatArr[i] = random.nextFloat(0.0f, 1.0f);
         }
 
-        int middleIndexArr = lengthArr / 2;
-        float numberInMiddleIndex = floatArr[middleIndexArr];
+        float middleIndexArr = floatArr[len / 2];
 
-        for (int i = 0; i < lengthArr; i++) {
-            System.out.printf("%6s", dF.format(floatArr[i]) + " ");
+        for (int i = 0; i < len; i++) {
+            System.out.printf("%s %.3f", "", floatArr[i]);
             if (i == 7) System.out.println();
         }
 
-        int countZeroCell = -1;
-        for (int i = 0; i < lengthArr; i++) {
-            if (floatArr[i] > numberInMiddleIndex) {
+        int countZeroCell = 0;
+        for (int i = 0; i < len; i++) {
+            if (floatArr[i] > middleIndexArr) {
                 floatArr[i] = 0;
                 countZeroCell++;
             }
@@ -81,17 +70,19 @@ public class ArrayTheme {
 
         System.out.println("\n");
 
-        for (int i = 0; i < lengthArr; i++) {
-            System.out.printf("%6s", dF.format(floatArr[i]) + " ");
+        for (int i = 0; i < len; i++) {
+            System.out.printf("%s %.3f", "", floatArr[i]);
             if (i == 7) System.out.println();
         }
 
         System.out.println("\nКоличество обнуленных ячеек: " + countZeroCell);
 
+//        System.out.printf("%.3f", 4.12345);
+
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
 
         char[] charArr = new char[26];
-        lengthArr = charArr.length;
+        len = charArr.length;
         int index = 0;
 
         for (char letter = 'A'; letter <= 'Z'; letter++) {
@@ -100,24 +91,24 @@ public class ArrayTheme {
         }
 
         int countLines = 0;
-        while (countLines < lengthArr) {
+        while (countLines < len) {
             countLines++;
             for (int i = 1; i <= countLines; i++) {
-                System.out.print(charArr[lengthArr - i]);
+                System.out.print(charArr[len - i]);
             }
             System.out.println();
         }
 
         System.out.println("\n5. Генерация уникальных чисел");
         intArr = new int[30];
-        lengthArr = intArr.length;
+        len = intArr.length;
 
         boolean flag = true;
 
-        for (int i = 0; i < lengthArr; ) {
+        for (int i = 0; i < len; ) {
             int targetNum = random.nextInt(60, 100);
 
-            for (int k = 0; k < lengthArr; ++k) {
+            for (int k = 0; k < len; ++k) {
                 if (intArr[k] == targetNum) {
                     flag = false;
                 }
@@ -130,10 +121,10 @@ public class ArrayTheme {
             flag = true;
         }
 
-        for (int i = lengthArr - 1; i > 0; i--) {
+        for (int i = len - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (intArr[j] > intArr[j + 1]) {
-                    tmp = intArr[j];
+                    int tmp = intArr[j];
                     intArr[j] = intArr[j + 1];
                     intArr[j + 1] = tmp;
                 }
