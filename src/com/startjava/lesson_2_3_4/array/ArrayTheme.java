@@ -7,7 +7,7 @@ public class ArrayTheme {
         System.out.println("1. Реверс значений массива");
         int[] intArr = {6, 4, 7, 2, 1, 3, 5};
 
-        arrayToString(intArr);
+//        arrayToString(intArr);
 
         int len = intArr.length;
 
@@ -137,36 +137,56 @@ public class ArrayTheme {
         System.out.println("\n6. Сдвиг элементов массива");
 
         String[] arrString = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        String[] arrCopy = new String[5];
+        len = arrString.length;
+        int arrCopyLen = 0;
 
-        int srcPos, destPos;
-        int countElems = 0;
-        int empty = 0;
+        for (String str : arrString) {
+            if (!str.isBlank()) {
+                arrCopyLen++;
+            }
+        }
+        String[] arrCopy = new String[arrCopyLen];
 
+        int destPos = 0;
+//        for (int i = 0; i < len; i++) {
+//            if (!arrString[i].isBlank()) {
+//                System.arraycopy(arrString, i, arrCopy, destPos, 1);
+//                destPos++;
+//            }
+//        }
+
+        int indexStart = 0;
+        int indexEnd = 0;
+        int defPos = 0;
 
         for (int i = 0; i < arrString.length; i++) {
-            if (arrString[i].isBlank()) {
-                empty++;
-                countElems = 0;
+            String str = arrString[i];
+            boolean tmp = !str.isBlank();
+            if (!str.isBlank()) {
+                indexStart++;
+                indexEnd++;
+                defPos++;
+            } else {
+                System.arraycopy(arrString, i, arrCopy, defPos, (indexEnd - indexStart));
+                System.out.println("i " + i + " defPos " + defPos + "iE - iS " + (indexEnd - indexStart));
             }
-
-            if (!arrString[i].isBlank()) {
-                srcPos = i;
-                countElems++;
-                System.out.println("Индекс " + i + "Количество " + countElems);
-            }
         }
 
-        System.arraycopy(arrString, 1, arrCopy, 0, 5);
-
-        for (String s : arrCopy) {
-            System.out.print(s + " ");
-        }
-
+//        for (String s : arrString) { System.out.print(s + " "); }
+//        System.out.println();
+        for (String s : arrCopy) { System.out.print(s + " "); }
     }
-    private static void arrayToString(int[] array) {
-        for (int num : array) {
-            System.out.print(num + " ");
-        }
-    }
+
+
+
+
+
+
+
+
+//    private static void arrayToString(int[] array) {
+//        for (int num : array) {
+//            System.out.print(num + " ");
+//        }
+//    }
 }
