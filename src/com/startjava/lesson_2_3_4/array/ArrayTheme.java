@@ -148,26 +148,16 @@ public class ArrayTheme {
         String[] arrCopy = new String[arrCopyLen];
 
         int destPos = 0;
-//  * 2й массив без пустых строк, вариант 1
-//        for (int i = 0; i < len; i++) {
-//            if (!arrString[i].isBlank()) {
-//                System.arraycopy(arrString, i, arrCopy, destPos, 1);
-//                destPos++;
-//            }
-//        }
-
-        int indexEnd = 1;
-        int ii = 0;
+        int srcPos = 0;
         int lenTrain = 0;
         for (int i = 0; i < len; i++) {
 
             boolean flag = true;
             while (flag) {
 
-                if (ii < len-1) {
-                    String s = arrString[ii++];
+                if (srcPos < len - 1) {
+                    String s = arrString[srcPos++];
                     if (!s.isBlank()) {
-//                        destPos++;
                         lenTrain++;
                     } else {
                         flag = false;
@@ -176,20 +166,23 @@ public class ArrayTheme {
                     flag = false;
                 }
             }
-            if  (lenTrain > 0) {
-                System.arraycopy(arrString, ii, arrCopy, destPos + lenTrain, lenTrain);
-            }
 
-            System.out.println("ii - " + ii + " desPos - " + destPos + " lenTrain- " + lenTrain);
-            lenTrain = 0;
+            System.out.println("srcPos - " + srcPos + " desPos - " + destPos + " lenTrain- " + lenTrain);
         }
-
 
 //        System.arraycopy(arrString, ++ii, arrCopy, destPos, indexEnd);
 
-        for (String s : arrString) { System.out.print(s + " "); }
-        System.out.println();
-        for (String s : arrCopy) { System.out.print(s + " "); }
+//        for (String s : arrString) { System.out.print(s + " "); }
+//        System.out.println();
+//        for (String s : arrCopy) { System.out.print(s + " "); }
+
+//  * 2й массив без пустых строк, вариант 1
+//        for (int i = 0; i < len; i++) {
+//            if (!arrString[i].isBlank()) {
+//                System.arraycopy(arrString, i, arrCopy, destPos, 1);
+//                destPos++;
+//            }
+//        }
     }
     private static void arrayToString(int[] array) {
         for (int num : array) {
