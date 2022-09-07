@@ -224,6 +224,13 @@ public class CyclesTheme {
             }
 
             System.out.println();
-        }    
+        }
+
+        String s = "2 + 4";
+        String[] d = s.split(" ");
+
+        for(String a : d) {
+            System.out.println(a);
+        }
     }
 }

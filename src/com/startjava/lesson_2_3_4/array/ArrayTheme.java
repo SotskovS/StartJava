@@ -1,7 +1,5 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.util.Random;
-
 public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива");
@@ -149,26 +147,43 @@ public class ArrayTheme {
 
         int destPos = 0;
         int srcPos = 0;
-        int lenTrain = 0;
+        int elementsNumber = 0;
         for (int i = 0; i < len; i++) {
-
-            boolean flag = true;
-            while (flag) {
-
-                if (srcPos < len - 1) {
-                    String s = arrString[srcPos++];
-                    if (!s.isBlank()) {
-                        lenTrain++;
-                    } else {
-                        flag = false;
-                    }
-                } else {
-                    flag = false;
+            String s = arrString[i];
+            if (s.isBlank()) {
+                srcPos++;
+                continue;
+            } else {
+                while (!s.isBlank()) {
+                    elementsNumber++;
+                    i++;
                 }
+                System.arraycopy(arrString, srcPos, arrCopy, destPos, elementsNumber);
+                srcPos++;
+                i--;
+                destPos += elementsNumber;
+                elementsNumber = 0;
             }
-
-            System.out.println("srcPos - " + srcPos + " desPos - " + destPos + " lenTrain- " + lenTrain);
+            for (String e : arrString) { System.out.print(e + " "); }
         }
+
+
+//            boolean flag = true;
+//            while (flag) {
+//
+//                if (srcPos < len - 1) {
+//                    String s = arrString[srcPos++];
+//                    if (!s.isBlank()) {
+//                        lenTrain++;
+//                    } else {
+//                        flag = false;
+//                    }
+//                } else {
+//                    flag = false;
+//                }
+//            }
+
+
 
 //        System.arraycopy(arrString, ++ii, arrCopy, destPos, indexEnd);
 
