@@ -205,3 +205,32 @@ public class ArrayTheme {
         }
     }
 }
+
+//    String[] srcArr = {"", "AA", "", "BBB", "CC", "D", "", "E", "FF", "G", ""};
+//    int newArrLength = 0;
+//        for(int i = 0; i < srcArr.length; i++) {
+//        if(srcArr[i].isEmpty()) {
+//        continue;
+//        } else newArrLength++;
+//        }
+//        String[] destArr = new String[newArrLength];
+//        int dest = 0;
+//        int curr = 0;
+//        elementsNumber = 0;
+//        for(int i = 0; i < srcArr.length; i++) {
+//        if (srcArr[i].isBlank()) {
+//        curr++;
+//        continue;
+//        } else {
+//        while (!srcArr[i].isBlank()) {
+//        elementsNumber++;
+//        i++;
+//        }
+//        System.arraycopy(srcArr, curr, destArr, dest, elementsNumber);
+//        curr = i;
+//        i--;
+//        dest += elementsNumber;
+//        elementsNumber = 0;
+//        }
+//        }
+//        printStringArray(destArr); (отредактировано)
