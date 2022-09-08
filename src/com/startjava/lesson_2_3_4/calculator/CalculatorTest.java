@@ -6,21 +6,14 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
+
+        System.out.println("Введите выражение в формате - \"a + b\": ");
+        String userExpression = scan.nextLine();
+        String[] arrInt = userExpression.split(" ");
+
         String userAnswer;
-
         do {
-            System.out.print("Введите первое число: ");
-            int a = scan.nextInt();
-            calc.setA(a);
-            
-            System.out.print("Введите знак математической операции: ");
-            char sign = scan.next().charAt(0);
-            calc.setSign(sign);
-            
-            System.out.print("Введите второе число: ");
-            int b = scan.nextInt();
-            calc.setB(b);
-
+            calc.arrExpression(arrInt);
             System.out.println(calc.calculate());
 
             boolean flag;
