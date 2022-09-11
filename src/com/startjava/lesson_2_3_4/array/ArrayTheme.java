@@ -10,9 +10,8 @@ public class ArrayTheme {
         printArrayInt(intArr);
 
         int len = intArr.length;
-
-        for (int i = 0; i < len / 2; i++) {
-            int tmp = intArr[len-- - 1];
+        for (int i = 0; i <= len / 2; i++) {
+            int tmp = intArr[--len];
             intArr[len] = intArr[i];
             intArr[i] = tmp;
         }
@@ -29,14 +28,13 @@ public class ArrayTheme {
             intArr[i] = i;
         }
 
-        int multi = 1;
+        int mult = 1;
         for (int i = 1; i < len - 1; i++) {
-            multi *= intArr[i];
-            System.out.print(i < 8 ? i + " * " : i + " = ");
+            mult *= intArr[i];
+            System.out.print(i < 8 ? i + " * " : i + " = " + mult);
         }
-        System.out.println(multi);
 
-        System.out.println("значение: " + intArr[0] + " имеет индекс - 0; " +
+        System.out.println("\nзначение: " + intArr[0] + " имеет индекс - 0; " +
                 "значение: " + intArr[9] + " имеет индекс - 9");
 
         System.out.println("\n3. Удаление элементов массива");
@@ -46,19 +44,19 @@ public class ArrayTheme {
         Random random = new Random();
 
         for (int i = 0; i < len; i++) {
-            floatArr[i] = random.nextFloat(0.0f, 1.0f);
+            floatArr[i] = random.nextFloat();
         }
 
-        float middleIndexArr = floatArr[len / 2];
+        float middleValueArr = floatArr[len / 2];
 
         for (int i = 0; i < len; i++) {
-            System.out.printf("%1s %.3f", "", floatArr[i]);
+            System.out.printf("%.3f ", floatArr[i]);
             if (i == 7) System.out.println();
         }
 
         int countZeroCell = 0;
         for (int i = 0; i < len; i++) {
-            if (floatArr[i] > middleIndexArr) {
+            if (floatArr[i] > middleValueArr) {
                 floatArr[i] = 0;
                 countZeroCell++;
             }
@@ -67,7 +65,7 @@ public class ArrayTheme {
         System.out.println("\n");
 
         for (int i = 0; i < len; i++) {
-            System.out.printf("%1s %.3f", "", floatArr[i]);
+            System.out.printf("%.3f ",floatArr[i]);
             if (i == 7) System.out.println();
         }
 
@@ -75,12 +73,12 @@ public class ArrayTheme {
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
 
-        char[] charArr = new char[26];
-        len = charArr.length;
+        char[] engAlphabet = new char[26];
+        len = engAlphabet.length;
         int index = 0;
 
         for (char letter = 'A'; letter <= 'Z'; letter++) {
-            charArr[index] = letter;
+            engAlphabet[index] = letter;
             index++;
         }
 
@@ -88,7 +86,7 @@ public class ArrayTheme {
         while (countLines < len) {
             countLines++;
             for (int i = 1; i <= countLines; i++) {
-                System.out.print(charArr[len - i]);
+                System.out.print(engAlphabet[len - i]);
             }
             System.out.println();
         }
@@ -102,8 +100,8 @@ public class ArrayTheme {
         for (int i = 0; i < len; ) {
             int targetNum = random.nextInt(60, 100);
 
-            for (int k = 0; k < len; ++k) {
-                if (intArr[k] == targetNum) {
+            for (int j = 0; j < len; j++) {
+                if (intArr[j] == targetNum) {
                     flag = false;
                 }
             }
@@ -126,9 +124,9 @@ public class ArrayTheme {
         }
 
         int count = 0;
-        for (int g : intArr) {
+        for (int num : intArr) {
             count++;
-            System.out.print(g + " ");
+            System.out.print(num + " ");
             if (count % 10 == 0) {
                 System.out.println();
             }
