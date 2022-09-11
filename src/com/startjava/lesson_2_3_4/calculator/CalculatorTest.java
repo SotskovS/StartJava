@@ -7,12 +7,12 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Введите выражение в формате - \"a + b\": ");
-        String userExpression = scan.nextLine();
-        String[] arrInt = userExpression.split(" ");
-
         String userAnswer;
         do {
+            System.out.println("Введите выражение в формате - \"a + b\": ");
+            String userExpression = scan.nextLine();
+            String[] arrInt = userExpression.split(" ");
+
             calc.arrExpression(arrInt);
             System.out.println(calc.calculate());
 
@@ -21,8 +21,9 @@ public class CalculatorTest {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 userAnswer = scan.next();
                 
-                if (userAnswer.equals("yes") || userAnswer.equals("no")) {                    
+                if (userAnswer.equals("yes") || userAnswer.equals("no")) {
                     flag = false;
+                    scan.nextLine();
                 } else {
                     flag = true;
                 }
