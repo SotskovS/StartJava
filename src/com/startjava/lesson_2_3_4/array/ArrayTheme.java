@@ -10,7 +10,7 @@ public class ArrayTheme {
         printArrayInt(intArr);
 
         int len = intArr.length;
-        for (int i = 0; i <= len / 2; i++) {
+        for (int i = 0; i < len / 2; i++) {
             int tmp = intArr[--len];
             intArr[len] = intArr[i];
             intArr[i] = tmp;
@@ -31,7 +31,7 @@ public class ArrayTheme {
         int mult = 1;
         for (int i = 1; i < len - 1; i++) {
             mult *= intArr[i];
-            System.out.print(i < 8 ? i + " * " : i + " = " + mult);
+            System.out.print(i + (i < 8 ? " * " : " = " + mult));
         }
 
         System.out.println("\nзначение: " + intArr[0] + " имеет индекс - 0; " +
@@ -47,7 +47,7 @@ public class ArrayTheme {
             floatArr[i] = random.nextFloat();
         }
 
-        float middleValueArr = floatArr[len / 2];
+        float middleNum = floatArr[len / 2];
 
         for (int i = 0; i < len; i++) {
             System.out.printf("%.3f ", floatArr[i]);
@@ -56,7 +56,7 @@ public class ArrayTheme {
 
         int countZeroCell = 0;
         for (int i = 0; i < len; i++) {
-            if (floatArr[i] > middleValueArr) {
+            if (floatArr[i] > middleNum) {
                 floatArr[i] = 0;
                 countZeroCell++;
             }
@@ -134,30 +134,30 @@ public class ArrayTheme {
 
         System.out.println("\n6. Сдвиг элементов массива");
 
-        String[] arrString = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        len = arrString.length;
+        String[] srcArrString = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        len = srcArrString.length;
 
-        int arrCopyLen = 0;
-        for (String str : arrString) {
+        int countStrings = 0;
+        for (String str : srcArrString) {
             if (!str.isBlank()) {
-                arrCopyLen++;
+                countStrings++;
             }
         }
-        String[] arrStringCopy = new String[arrCopyLen];
+        String[] destArrString = new String[countStrings];
 
         int destPos = 0;
         int srcPos = 0;
         int elementsNumber = 0;
         for (int i = 0; i < len; i++) {
-            if (arrString[i].isBlank()) {
+            if (srcArrString[i].isBlank()) {
                 srcPos++;
                 continue;
             } else {
-                while (!arrString[i].isBlank()) {
+                while (!srcArrString[i].isBlank()) {
                     elementsNumber++;
                     i++;
                 }
-                System.arraycopy(arrString, srcPos, arrStringCopy, destPos, elementsNumber);
+                System.arraycopy(srcArrString, srcPos, destArrString, destPos, elementsNumber);
                 srcPos = i;
                 i--;
                 destPos += elementsNumber;
@@ -165,9 +165,9 @@ public class ArrayTheme {
             }
         }
 
-        printArrayString(arrString);
+        printArrayString(srcArrString);
         System.out.println();
-        printArrayString(arrStringCopy);
+        printArrayString(destArrString);
     }
 
     private static void printArrayInt(int[] array) {

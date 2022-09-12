@@ -26,7 +26,9 @@ public class GuessNumber {
                 break;
             }            
             System.out.print(player2.getName() + " введите число от 1 до 100: ");    
-            playerNum = scan.nextInt();                
+            playerNum = scan.nextInt();
+            player2.setPlayerNum(playerNum);
+            System.out.println(player2.getPlayerNum());
         } while (!checkNumber(player2));
     }
 
