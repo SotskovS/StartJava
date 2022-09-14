@@ -1,8 +1,8 @@
 package com.startjava.lesson_2_3_4.guess;
 
-public class Player {    
+public class Player {
     private String name;
-    private int playerNumbers;
+    private int[] playerNumbers = new int[3];
     private int playerNum;
 
     public Player(String name) {
@@ -13,15 +13,17 @@ public class Player {
         return name;
     }
 
-    public void setPlayerNum(int playerNum) {
-        this.playerNum = playerNum;
+    public void setPlayerNum(int num) {
+        int f = 0;
+
+        for (int i = 0; i < playerNumbers.length; i++) {
+
+            this.playerNumbers[i] = num;
+        }
     }
 
-    Player(int num ) {
-        this.playerNumbers = num;
-    };
+    public int[] getArr () {
 
-    public int getPlayerNum() {
-        return playerNum;
+        return playerNumbers;
     }
 }
