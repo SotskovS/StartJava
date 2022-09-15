@@ -11,10 +11,8 @@ public class CalculatorTest {
         do {
             if ("yes".equals(answer)) {
                 System.out.println("Введите выражение в формате - \"a + b\": ");
-
                 String userExpression = scan.nextLine();
-                String[] arrStringExpression = userExpression.split(" ");
-                System.out.println(calc.calculate(arrStringExpression));
+                System.out.println(calc.calculate(userExpression));
             }
 
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
