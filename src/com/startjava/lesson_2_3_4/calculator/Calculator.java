@@ -7,10 +7,10 @@ public class Calculator {
     private char sign;
 
     public int calculate(String userExpression) {
-        String[] arrStringExpression = userExpression.split(" ");
-        a = Integer.parseInt(arrStringExpression[0]);
-        sign = arrStringExpression[1].charAt(0);
-        b = Integer.parseInt(arrStringExpression[2]);
+        String[] partsExpression = userExpression.split(" ");
+        a = Integer.parseInt(partsExpression[0]);
+        sign = partsExpression[1].charAt(0);
+        b = Integer.parseInt(partsExpression[2]);
 
         if (b == 0) {
             System.out.println("На 0 делить нельзя");            
