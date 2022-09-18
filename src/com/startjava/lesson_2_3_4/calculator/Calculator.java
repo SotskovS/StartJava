@@ -16,7 +16,7 @@ public class Calculator {
     public int calculate() {
 
         if (b == 0) {
-            System.out.println("На 0 делить нельзя");            
+            System.out.println("На 0 делить нельзя");
         } else {
             switch (sign) {
                 case "+": result = a + b;
