@@ -4,30 +4,18 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
 
-        String userAnswer;
+        String answer = "yes";
         do {
-            System.out.println("Введите выражение в формате - \"a + b\": ");
-            String userExpression = scan.nextLine();
-            String[] arrInt = userExpression.split(" ");
+            if ("yes".equals(answer)) {
+                System.out.println("Введите выражение в формате - \"a + b\": ");
+                String mathExpression = scan.nextLine();
+                System.out.println(Calculator.calculate(mathExpression));
+            }
 
-            calc.arrExpression(arrInt);
-            System.out.println(calc.calculate());
-
-            boolean flag;
-            do {
-                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                userAnswer = scan.next();
-                
-                if (userAnswer.equals("yes") || userAnswer.equals("no")) {
-                    flag = false;
-                    scan.nextLine();
-                } else {
-                    flag = true;
-                }
-            } while (flag);
-         } while(!userAnswer.equals("no"));
+            System.out.print("Хотите продолжить вычисления? [yes/no]: ");
+            answer = scan.nextLine();
+        } while (!"no".equals(answer));
     }
 }

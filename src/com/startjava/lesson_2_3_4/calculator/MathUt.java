@@ -9,7 +9,7 @@ class Main {
 
 
 public class MathUt {
-    public static int suMOfInits(int i, int...nums) {
+    public static int suMOfInits(int i, int... nums) {
         int sum = i;
 
         for (int num : nums) {

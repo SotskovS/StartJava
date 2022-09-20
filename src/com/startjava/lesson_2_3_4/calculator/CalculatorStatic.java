@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3_4.calculator;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 class Calc {
@@ -14,24 +13,23 @@ class Calc {
         try {
             a = Integer.parseInt(partsExpression[0]);
             b = Integer.parseInt(partsExpression[2]);
-            if (a < 0 || b < 0) {}
-            if (b == 0) {}
-        } catch (IllegalArgumentException e) {
-            System.out.println("Введены не корректные значения");
-        }
-
-        if (b == 0) {
-            System.out.println("На 0 делить нельзя");
-        } else {
-            switch (sign) {
-                case '+': return a + b;
-                case '-': return a - b;
-                case '*': return a * b;
-                case '/': return a / b;
-                case '%': return a % b;
-                case '^': return (int) Math.pow(a, b);
-                default : throw new IllegalStateException("Unexpected value: " + sign);
+            if (a < 0 || b < 0) {
+                throw new Exception();
             }
+            if ((sign == '/' && b == 0)) {
+                System.out.println("На 0 делить нельзя!");
+            } else {
+                switch (sign) {
+                    case '+': return a + b;
+                    case '-': return a - b;
+                    case '*': return a * b;
+                    case '%': return a % b;
+                    case '^': return (int) Math.pow(a, b);
+                    case '/': return (b == 0 ? 0 : a / b);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Введены не корректные значения");
         }
         return 0;
     }
