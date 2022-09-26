@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class GuessNumber {
     private int targetNum;
     private int playerNum;
+    private int attempt = 0;
     private Player player1;
     private Player player2;
 
@@ -17,15 +18,21 @@ public class GuessNumber {
     }
 
     public void launch() {
-        Scanner scan = new Scanner(System.in);        
+        Scanner scan = new Scanner(System.in);
 
         generateSecretNum();
+        attempt = 0;
         do {
-            System.out.print(player1.getName() + " введите число от 1 до 100: ");   
+
+            int[] d = player1.getArray();
+
+            for(int a : d) {System.out.print(a + " ");}
+            System.out.print(player1.getName() + " введите число от 1 до 100: ");
             playerNum = scan.nextInt();
             player1.setNumber(playerNum);
+            attempt++;
 
-            if (player1.getArray().size() == 5) {
+            if (attempt == 5) {
                 System.out.println("У " + player1.getName() + " попытки закончились!");
             }
 
@@ -36,7 +43,7 @@ public class GuessNumber {
             playerNum = scan.nextInt();
             player2.setNumber(playerNum);
 
-            if (player2.getArray().size() == 5) {
+            if (attempt == 5) {
                 System.out.println("У " + player2.getName() + " попытки закончились!");
                 break;
             }
@@ -51,7 +58,16 @@ public class GuessNumber {
     private boolean checkNumber(Player player) {
         if (playerNum == targetNum) {
             System.out.println("Игрок " + player.getName() + " угадал число " + targetNum +
-                    " c " + player.getArray().size() + " попытки ");
+                    " c " + attempt  + " попытки " + player.getArray());
+            int[] a = Arrays.copyOf(player1.getArray(), attempt);
+            int[] b = Arrays.copyOf(player2.getArray(), attempt);
+
+            System.out.print("Попытки игрока " + player1.getName() + ": ");
+            for (int attemptPlayer1 : a ) { System.out.print(attemptPlayer1 + " ");}
+            System.out.println(Arrays.toString(a));
+            System.out.println("Попытки игрока " + player2.getName() + ": ");
+            for (int attemptPlayer2 : b ) { System.out.print(attemptPlayer2 + " "); }
+            System.out.println(Arrays.toString(b));
             return true;    
         } 
         if (playerNum < targetNum) {
@@ -61,4 +77,6 @@ public class GuessNumber {
         }
         return false;      
     }
+
+
 }
