@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.guess;
 
+import java.util.Arrays;
+
 public class Player {
     private String name;
     private int[] playerData = new int[10];
@@ -19,6 +21,10 @@ public class Player {
 
     public int[] getArray() {
         return playerData;
+    }
+
+    public void zeroArray() {
+        Arrays.fill(playerData, 0);
     }
 
 }
