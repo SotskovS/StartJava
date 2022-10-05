@@ -1,9 +1,11 @@
 package com.startjava.lesson_2_3_4.guess;
 
+import java.util.Arrays;
+
 public class Player {
     private String name;
-    private int[] playerNumbers = new int[3];
-    private int playerNum;
+    private int[] playerData = new int[10];
+    private int i = 0;
 
     public Player(String name) {
         this.name = name;
@@ -12,18 +14,17 @@ public class Player {
     public String getName() {
         return name;
     }
-
-    public void setPlayerNum(int num) {
-        int f = 0;
-
-        for (int i = 0; i < playerNumbers.length; i++) {
-
-            this.playerNumbers[i] = num;
-        }
+    public void setNumber(int number) {
+        playerData[i] = number;
+        i++;
     }
 
-    public int[] getArr () {
-
-        return playerNumbers;
+    public int[] getArray() {
+        return playerData;
     }
+
+    public void zeroArray() {
+        Arrays.fill(playerData, 0);
+    }
+
 }
